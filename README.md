@@ -1,107 +1,330 @@
-## 🛒 Zepto E-commerce SQL Data Analyst Portfolio Project
-This is a complete, real-world data analyst portfolio project based on an e-commerce inventory dataset scraped from Zepto — one of India’s fastest-growing quick-commerce startups. This project simulates real analyst workflows, from raw data exploration to business-focused data analysis.
+# Data Analysis Project
 
-## This project is perfect for:
+## Project Overview
 
-📊 Data Analyst aspirants who want to build a strong Portfolio Project for interviews and LinkedIn
-📚 Anyone learning SQL hands-on
-💼 Preparing for interviews in retail, e-commerce, or product analytics
-🎥 Watch this YouTube video to implement the full project from scratch:
-SQL Data Analyst Portfolio Project using Zepto Inventory Dataset 🔗 Link to Video: Watch on Youtube
+This project is created to perform data analysis using Python. The main goal of this project is to understand the data, clean it, analyze it, and find meaningful insights. Every step is completed in a simple and organized way so that anyone can easily understand the workflow.
 
-## 📌 Project Overview
-The goal is to simulate how actual data analysts in the e-commerce or retail industries work behind the scenes to use SQL to:
+Data analysis helps convert raw data into useful information. In this project, different Python libraries are used to clean the data, explore patterns, answer business questions, and create visualizations. The project follows a complete data analysis process from loading the dataset to generating insights.
 
-✅ Set up a messy, real-world e-commerce inventory database
+This project is suitable for beginners as well as recruiters who want to see practical knowledge of Python, Pandas, NumPy, and data visualization.
 
-✅ Perform Exploratory Data Analysis (EDA) to explore product categories, availability, and pricing inconsistencies
+---
 
-✅ Implement Data Cleaning to handle null values, remove invalid entries, and convert pricing from paise to rupees
+# Problem Statement
 
-✅ Write business-driven SQL queries to derive insights around pricing, inventory, stock availability, revenue and more
+Raw data usually contains missing values, duplicate records, incorrect formats, and unnecessary information. Because of these problems, it becomes difficult to make correct business decisions.
 
-## 📁 Dataset Overview
-The dataset was sourced from Kaggle and was originally scraped from Zepto’s official product listings. It mimics what you’d typically encounter in a real-world e-commerce inventory system.
+The objective of this project is to clean the data, perform analysis, and answer important questions using Python.
 
-Each row represents a unique SKU (Stock Keeping Unit) for a product. Duplicate product names exist because the same product may appear multiple times in different package sizes, weights, discounts, or categories to improve visibility – exactly how real catalog data looks.
+---
 
-## 🧾 Columns:
-* sku_id: Unique identifier for each product entry (Synthetic Primary Key)
-* name: Product name as it appears on the app
-* category: Product category like Fruits, Snacks, Beverages, etc.
-* mrp: Maximum Retail Price (originally in paise, converted to ₹)
-* discountPercent: Discount applied on MRP
-* discountedSellingPrice: Final price after discount (also converted to ₹)
-* availableQuantity: Units available in inventory
-* weightInGms: Product weight in grams
-* outOfStock: Boolean flag indicating stock availability
-* quantity: Number of units per package (mixed with grams for loose produce)
+# Objectives
 
-##🔧 Project Workflow
-Here’s a step-by-step breakdown of what we do in this project:
+The main objectives of this project are:
 
-## 1. Database & Table Creation
-We start by creating a SQL table with appropriate data types:
+- Understand the dataset
+- Clean the data
+- Remove duplicate records
+- Handle missing values
+- Perform exploratory data analysis
+- Answer business questions
+- Create charts for better understanding
+- Find useful insights
+- Improve decision making using data
 
-CREATE TABLE zepto (
-  sku_id SERIAL PRIMARY KEY,
-  category VARCHAR(120),
-  name VARCHAR(150) NOT NULL,
-  mrp NUMERIC(8,2),
-  discountPercent NUMERIC(5,2),
-  availableQuantity INTEGER,
-  discountedSellingPrice NUMERIC(8,2),
-  weightInGms INTEGER,
-  outOfStock BOOLEAN,
-  quantity INTEGER
-);
+---
 
-## 2. Data Import
-Loaded CSV using pgAdmin's import feature.
+# Tools and Technologies
 
-If you're not able to use the import feature, write this code instead:
+The following tools and libraries are used in this project.
 
-   \copy zepto(category,name,mrp,discountPercent,availableQuantity,
-            discountedSellingPrice,weightInGms,outOfStock,quantity)
-  FROM 'data/zepto_v2.csv' WITH (FORMAT csv, HEADER true, DELIMITER ',', QUOTE '"', ENCODING 'UTF8');
-Faced encoding issues (UTF-8 error), which were fixed by saving the CSV file using CSV UTF-8 format.
-## 3. 🔍 Data Exploration
-Counted the total number of records in the dataset
-Viewed a sample of the dataset to understand structure and content
-Checked for null values across all columns
-Identified distinct product categories available in the dataset
-Compared in-stock vs out-of-stock product counts
-Detected products present multiple times, representing different SKUs
+- Python
+- Jupyter Notebook
+- NumPy
+- Pandas
+- Matplotlib
+- Seaborn
 
-## 4. 🧹 Data Cleaning
+---
 
-Identified and removed rows where MRP or discounted selling price was zero
-Converted mrp and discountedSellingPrice from paise to rupees for consistency and readability
+# Python Libraries
 
-## 5. 📊 Business Insights
-   
-Found top 10 best-value products based on discount percentage
-Identified high-MRP products that are currently out of stock
-Estimated potential revenue for each product category
-Filtered expensive products (MRP > ₹500) with minimal discount
-Ranked top 5 categories offering highest average discounts
-Calculated price per gram to identify value-for-money products
-Grouped products based on weight into Low, Medium, and Bulk categories
-Measured total inventory weight per product category
+## Pandas
 
+Pandas is used for reading datasets, cleaning data, filtering rows, grouping data, sorting, and performing analysis.
 
+## NumPy
 
-## This file contains:
+NumPy is used for mathematical calculations and numerical operations.
 
-Table creation
-Data exploration
-Data cleaning
-SQL Business analysis
-Load the dataset into pgAdmin or any other PostgreSQL client
+## Matplotlib
 
-Create a database and run the SQL file
-Import the dataset (convert to UTF-8 if necessary)
+Matplotlib is used to create different charts and graphs.
 
-💼 LinkedIn: Siddhi jha
+## Seaborn
+
+Seaborn is used to create attractive statistical visualizations.
+
+---
+
+# Dataset Information
+
+The dataset contains different records that are used for analysis.
+
+The dataset is first loaded into Python and then checked for its structure, columns, missing values, duplicates, and data types.
+
+---
+
+# Project Workflow
+
+The project is completed by following these steps.
+
+### Step 1
+
+Import all required Python libraries.
+
+### Step 2
+
+Load the dataset.
+
+### Step 3
+
+Understand the dataset.
+
+### Step 4
+
+Check data types.
+
+### Step 5
+
+Find missing values.
+
+### Step 6
+
+Remove duplicate records.
+
+### Step 7
+
+Handle incorrect values.
+
+### Step 8
+
+Perform Exploratory Data Analysis.
+
+### Step 9
+
+Create visualizations.
+
+### Step 10
+
+Find insights.
+
+### Step 11
+
+Write conclusions.
+
+---
+
+# Data Cleaning
+
+Data cleaning is one of the most important parts of this project.
+
+The following operations are performed.
+
+- Remove duplicate records
+- Handle missing values
+- Fix incorrect data types
+- Rename columns if required
+- Remove unwanted columns
+- Handle null values
+- Check inconsistent data
+
+After cleaning, the dataset becomes more accurate and reliable.
+
+---
+
+# Exploratory Data Analysis
+
+Exploratory Data Analysis is performed to understand the dataset.
+
+The analysis includes:
+
+- Summary statistics
+- Distribution of values
+- Maximum values
+- Minimum values
+- Average values
+- Grouping
+- Filtering
+- Sorting
+- Correlation
+- Pattern identification
+
+---
+
+# Visualizations
+
+Different charts are created to understand the data more clearly.
+
+The visualizations include:
+
+- Bar Chart
+- Line Chart
+- Histogram
+- Pie Chart
+- Scatter Plot
+- Count Plot
+- Box Plot
+- Heatmap
+
+These charts help identify trends, patterns, and relationships in the data.
+
+---
+
+# Business Questions
+
+Several business-related questions are answered during the analysis.
+
+Examples include:
+
+- Which category has the highest value?
+- Which category has the lowest value?
+- Which records contribute the most?
+- What trends are present?
+- Which factors affect performance?
+- Which areas need improvement?
+
+---
+
+# Key Insights
+
+Some important insights are generated after completing the analysis.
+
+- Clean data provides more accurate results.
+- Visualization makes data easier to understand.
+- Some categories perform better than others.
+- Missing values can affect analysis.
+- Duplicate records can produce incorrect results.
+- Data analysis helps in better business decisions.
+
+---
+
+# Project Structure
+
+```
+Project Folder
+│
+├── Dataset
+├── Jupyter Notebook
+├── Images
+├── README.md
+└── Requirements
+```
+
+---
+
+# How to Run the Project
+
+Follow these steps.
+
+### Clone the repository
+
+```bash
+git clone <repository_link>
+```
+
+### Move into the project folder
+
+```bash
+cd project-folder
+```
+
+### Install required libraries
+
+```bash
+pip install pandas numpy matplotlib seaborn
+```
+
+### Start Jupyter Notebook
+
+```bash
+jupyter notebook
+```
+
+### Open the notebook and run all cells.
+
+---
+
+# Project Features
+
+- Easy to understand
+- Beginner friendly
+- Clean code
+- Well organized
+- Complete data analysis process
+- Data cleaning
+- Visualization
+- Business insights
+- Python implementation
+
+---
+
+# Learning Outcomes
+
+After completing this project, I improved my knowledge of:
+
+- Python Programming
+- Pandas
+- NumPy
+- Data Cleaning
+- Data Visualization
+- Exploratory Data Analysis
+- Problem Solving
+- Business Analysis
+
+---
+
+# Future Improvements
+
+The project can be improved by adding:
+
+- Interactive Dashboard
+- Power BI Dashboard
+- Machine Learning Models
+- Advanced Visualizations
+- Real Time Data
+- Automated Reports
+
+---
+
+# Conclusion
+
+This project demonstrates the complete process of data analysis using Python. It begins with understanding the dataset, continues through data cleaning and exploration, and ends with meaningful visualizations and business insights. The project highlights the importance of clean data, structured analysis, and clear presentation of results.
+
+Working on this project helped strengthen practical skills in Python, Pandas, NumPy, Matplotlib, and Seaborn. It also improved my ability to solve real-world data problems and communicate findings in a simple and understandable way.
+
+This project reflects my learning journey in data analytics and serves as a strong portfolio project to showcase my analytical and technical skills.
+
+---
+
+# Author
+
+**Siddhi Jha**
+
+Aspiring Data Analyst
+
+Skills
+
+- Python
+- SQL
+- Excel
+- Power BI
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+
+Thank you for visiting this project.
+If you find this project useful, feel free to give it a star.
 
 
